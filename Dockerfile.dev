@@ -1,0 +1,15 @@
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN npm install
+
+# COPY시 노드 모듈은 지우자! 용량이 너무 많이 써진다!
+COPY ./ ./ 
+
+CMD [ "npm", "run", "start" ]
+
+# Dockerfile의 이름이 아니므로 docker build -f Dockerfile.dev ./로 파일을 임의로 지정해준다!
+# React는 업그레이드로 docker run -it -p port:port 로 해야한다!
