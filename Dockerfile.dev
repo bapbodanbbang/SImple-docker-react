@@ -13,3 +13,7 @@ CMD [ "npm", "run", "start" ]
 
 # Dockerfile의 이름이 아니므로 docker build -f Dockerfile.dev ./로 파일을 임의로 지정해준다!
 # React는 업그레이드로 docker run -it -p port:port 로 해야한다!
+# Volume으로 시작할 때는 docker build -p port:port -v /usr/src/app/node_modules(참조하지 말아야 하는 것) -v $(pwd):/usr/src/app image
+# Volume 사용 이유 : 실시간으로 변경이 가능하다!
+# Volume은 불펴하므로 docker-compose를 사용하자!
+# 테스트 할 때는 docker run -it 이미지 이름 npm run test
