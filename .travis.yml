@@ -2,7 +2,8 @@ sudo: required
 
 language: generic
 
-services: docker
+services: 
+  - docker
 
 before_install:
   - echo "create docker image"
