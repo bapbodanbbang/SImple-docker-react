@@ -10,8 +10,21 @@ before_install:
 script:
   - docker run -e CI=true bapbodanbbang/docker-react-app npm run test -- --coverage
 
-after_success:
-  - echo "Test Success!"
+# after_success:
+#   - echo "Test Success!"
 
-after_failure:
-  - echo "Test Fail!"
+# after_failure:
+#   - echo "Test Fail!"
+
+# AWS에서 깃헙 브랜치 감지해 travis Ci로 넘어갔다가 elasticbeanstalk에 배포하기 위한 코드 --> AWS Secret Key 필요!
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  application: "docker-react-app"
+  env: "DockerReactApp-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-774237348716"
+  bucket_path: "docker-react-app"
+  on:
+    branch: main
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
