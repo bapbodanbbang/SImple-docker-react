@@ -1,5 +1,9 @@
 language: generic
 
+dist: xenial
+
+os: linux
+
 services: 
   - docker
 
@@ -22,7 +26,7 @@ deploy:
   region: "ap-northeast-2"
   application: "docker-react-app"
   env: "DockerReactApp-env"
-  bucket_name: "elasticbeanstalk-ap-northeast-2-774237348716"
+  bucket: "elasticbeanstalk-ap-northeast-2-774237348716"
   bucket_path: "docker-react-app"
   on:
     branch: main
