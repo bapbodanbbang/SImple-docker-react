@@ -9,10 +9,10 @@ dev와 배포를 나누어 개발합니다.
 yml 파일로 GitHub과 연동합니다.
 
 1.테스트를 위한 준비
-도커 환경에서 리액트 앱을 사용하고 있으니, Travis CI도 도커환경에서 구동해야한다!
+Travis CI를 도커환경에서 구동시킵니다.
 --> 구성된 도커 환경에서 Dockerfile.dev 파일을 사용해 도커 이미지 생성 
 
-2.테스트 실행
-어떻게 테스트를 수행할 것인가
-
 # Will Use AWS!!!
+AWS ElasticBeanstalk에 올렸습니다.
+
+
